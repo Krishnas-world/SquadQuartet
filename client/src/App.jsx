@@ -13,10 +13,12 @@ import NotFound from './pages/NotFound';
 import Profile from './pages/Profile';
 import Register from './pages/Register';
 import VideoSession from './pages/VideoSession';
+import Header from './components/Header';
 
 function App() {
   return (
     <BrowserRouter>
+    <Header/>
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
