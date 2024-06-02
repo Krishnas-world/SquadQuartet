@@ -8,7 +8,7 @@ const NotFound = () => {
         <a className="book home-page text-black font-medium">Home page</a>
         <a className="book about-us text-black font-medium">About us</a>
         <a className="book contact text-black font-medium">Contact</a>
-        <a className="book faq text-black font-medium">F.A.Q.</a>
+        <a className="book faq text-black">F.A.Q.</a>
         
         <span className="book not-found"></span>
        

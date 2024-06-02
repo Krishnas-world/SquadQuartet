@@ -14,26 +14,27 @@ import Profile from './pages/Profile';
 import Register from './pages/Register';
 import VideoSession from './pages/VideoSession';
 import Header from './components/Header';
-
+import PrivateRoute from './components/PrivateRoute';
 function App() {
   return (
     <BrowserRouter>
-    <Header/>
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminDash />} />
+        <Route element={<PrivateRoute/>}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/video-session" element={<VideoSession />} />
+        <Route path="/assessment/:id" element={<Assessment />} />
+        <Route path="/library" element={<Library />} />
+        </Route>
         <Route path="/courses" element={<Courses />} />
         <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/course/:id/content" element={<CourseContent />} />
-        <Route path="/video-session" element={<VideoSession />} />
-        <Route path="/assessment/:id" element={<Assessment />} />
         <Route path="/forum" element={<Forum />} />
-        <Route path="/library" element={<Library />} />
       </Routes>
     </BrowserRouter>
   );
