@@ -15,6 +15,7 @@ import Register from './pages/Register';
 import VideoSession from './pages/VideoSession';
 import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
+import About from './pages/About';
 function App() {
   return (
     <BrowserRouter>
@@ -35,6 +36,7 @@ function App() {
         <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/course/:id/content" element={<CourseContent />} />
         <Route path="/forum" element={<Forum />} />
+        <Route path='/about' element={<About/>} />
       </Routes>
     </BrowserRouter>
   );

@@ -25,7 +25,8 @@ app.use(
 )
 
 // ! Show the routes
-// app.use('/server/auth', auth);
+app.use('/server/auth', auth);
+
 // ! Add error middleware
 app.use((err, req, res, next) => { 
     const statusCode = err.statusCode || 500;

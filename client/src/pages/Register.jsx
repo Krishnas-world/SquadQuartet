@@ -20,7 +20,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/server/register', formData);
+      const response = await axios.post('http://localhost:3000/server/auth/signup', formData);
       alert('Registration successful!');
     } catch (error) {
       console.error('There was an error registering!', error);

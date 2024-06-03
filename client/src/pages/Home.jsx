@@ -3,24 +3,23 @@ import { FlipWordsDemo } from '../components/FlipWordsDemo';
 import {Link, NavLink} from 'react-router-dom'
 
 const NAV_LINKS = [
-  { text: 'Home', href: '#' },
-  { text: 'Courses', href: '#' },
-  { text: 'About', href: '#' },
-  { text: 'Login', href: '#' }
+  { text: 'Home', href: '/' },
+  { text: 'Courses', href: '/courses' },
+  { text: 'About', href: '/about' },
+  { text: 'Login', href: '/register' }
 ];
 
 const NavLinks = () => (
   <nav className='flex space-x-6 text-lg font-semibold'>
     {NAV_LINKS.map((link, index) => (
-      <a key={index} href={link.href} className='hover:text-white'>{link.text}</a>
+      <Link key={index} to={link.href} className='hover:text-white'>{link.text}</Link>
     ))}
   </nav>
 );
 
 const ImageContainer = () => (
   <div className="relative">
-    <div className='w-72 h-72 bg-zinc-200 rounded-full flex items-center justify-center text-zinc-500 text-xl'>
-      Image Here
+    <div className='w-72 h-72 bg-zinc-200 rounded-full flex items-center justify-center text-zinc-500 text-xl border-4 border-black' style={{backgroundImage: "url(../../public/kids.webp)", backgroundSize: 'cover'}}>
     </div>
   </div>
 );
