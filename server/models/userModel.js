@@ -18,8 +18,8 @@ const UserSchema = new Schema({
     },
     role: {
         type: String,
-        enum: ["student", "teacher", "parent", "admin"],
-        required: true,
+        enum: ["student", "teacher", "parent", "admin"]
+        // required: true,
     },
     profile: {
         firstName: { 
