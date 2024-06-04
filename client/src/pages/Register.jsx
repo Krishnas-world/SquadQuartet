@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { RoleContext } from '../context/RoleContext';
 
 const Register = () => {
+  const navigate = useNavigate();
+  const { updateRole } = useContext(RoleContext);
   const [formData, setFormData] = useState({
     username: '',
     password: '',
     email: '',
-    role: 'student', // default role
+    role: 'student',
     firstName: '',
     lastName: '',
     age: '',
@@ -21,7 +25,12 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3000/server/auth/signup', formData);
+      const token = response.data.token;
+      localStorage.setItem('accessToken', token);
+      const decodedToken = JSON.parse(atob(token.split('.')[1]));
+      updateRole(decodedToken.role);
       alert('Registration successful!');
+      navigate('/dashboard');
     } catch (error) {
       console.error('There was an error registering!', error);
     }

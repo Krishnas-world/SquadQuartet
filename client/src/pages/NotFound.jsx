@@ -1,17 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './NotFound.css'
 const NotFound = () => {
   return (
     <div className='flex flex-col justify-center items-center h-screen'>
     <div>
       <nav className="shelf">
-        <a className="book home-page text-black font-medium">Home page</a>
-        <a className="book about-us text-black font-medium">About us</a>
-        <a className="book contact text-black font-medium">Contact</a>
-        <a className="book faq text-black">F.A.Q.</a>
+        <Link to='/' className="book home-page text-black font-medium">Home page</Link>
+        <Link to='/about' className="book about-us text-black font-medium">About us</Link>
+        <Link to='/register' className="book contact text-black font-medium">Login/Register</Link>
+        <Link to='/forum' className="book faq text-black">F.A.Q.</Link>
         
         <span className="book not-found"></span>
-       
         <span className="door left"></span>
         <span className="door right"></span>
       </nav><br /><br />

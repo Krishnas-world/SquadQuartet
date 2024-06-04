@@ -35,7 +35,7 @@ const signin = async (req, res, next) => {
 
 const signup = async (req, res, next) => {
     try {
-        const { username, email, password } = req.body;
+        const { username, email, password, role } = req.body;
         if (!username || !email || !password || username === '' || email === '' || password === '') {
             throw new Error('All fields are required');
         }
@@ -44,17 +44,25 @@ const signup = async (req, res, next) => {
         const newUser = new User({
             username,
             email,
-            password: hashPass
+            password: hashPass,
+            role // Include role in the user object
         });
 
         await newUser.save();
+
+        // Generate JWT token containing user data
+        const token = jwt.sign({ id: newUser._id, role: newUser.role }, process.env.JWT_SECRET);
+
+        // Send token in response
         res.status(200).json({
+            token, // Send the generated token to the client
             message: "User created successfully"
         });
     } catch (error) {
         next(error);
     }
 };
+
 const google = async (req, res, next) => {
     const { email, name, googlePhotoUrl } = req.body;
     try {
