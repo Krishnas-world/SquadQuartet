@@ -52,7 +52,7 @@ const signup = async (req, res, next) => {
         await newUser.save();
 
         // Generate JWT token containing user data
-        const token = jwt.sign({ id: newUser._id, role: newUser.role }, process.env.JWT_SECRET);
+        const token = jwt.sign({ id: newUser._id,name:newUser.name, role: newUser.role }, process.env.JWT_SECRET);
 
         // Send token in response
         res.status(200).json({
