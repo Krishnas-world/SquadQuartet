@@ -16,8 +16,9 @@ import Register from './pages/Register';
 import VideoSession from './pages/VideoSession';
 import PrivateRoute from './components/PrivateRoute';
 import About from './pages/About';
-import DashboardStudent from './pages/DashboardStudent';
+// import DashboardStudent from './pages/DashboardStudent';
 import RoleProvider from './context/RoleContext';
+import Widget from './pages/Widget';
 
 function App() {
   return (
@@ -27,10 +28,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/about" element={<About/>} />
+          <Route path="/about" element={<Widget/>} />
           <Route element={<PrivateRoute />}>
             <Route path="/dashboard" element={<PrivateRoute />} />
-            <Route path="/dashboard/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/video-session" element={<VideoSession />} />
             <Route path="/assessment/:id" element={<Assessment />} />
             <Route path="/library" element={<Library />} />

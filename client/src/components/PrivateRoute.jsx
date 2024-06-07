@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from 'react';
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import TeacherDashboard from '../pages/TeacherDashboard';
-import DashboardStudent from '../pages/DashboardStudent';
-import AdminDash from '../pages/AdminDash';
-import { RoleContext } from '../context/RoleContext';
+import { Navigate, useLocation } from "react-router-dom";
+import DashboardStudent from "../pages/DashboardStudent";
+import TeacherDashboard from "../pages/TeacherDashboard";
+// import ParentDashboard from "../pages/ParentDashboard";
+// import AdminDashboard from "../pages/AdminDashboard";
+import { useContext, useEffect } from "react";
+import { RoleContext } from "../context/RoleContext";
 
 const PrivateRoute = ({ element: Component, ...rest }) => {
   const token = localStorage.getItem('accessToken');
@@ -12,8 +13,14 @@ const PrivateRoute = ({ element: Component, ...rest }) => {
 
   useEffect(() => {
     if (token) {
-      const decodedToken = JSON.parse(atob(token.split('.')[1]));
-      updateRole(decodedToken.role);
+      try {
+        const decodedToken = JSON.parse(atob(token.split('.')[1]));
+        updateRole(decodedToken.role);
+      } catch (error) {
+        console.error('Invalid token', error);
+        localStorage.removeItem('accessToken');
+        return <Navigate to="/login" replace state={{ from: location }} />;
+      }
     }
   }, [token, updateRole]);
 
@@ -26,8 +33,10 @@ const PrivateRoute = ({ element: Component, ...rest }) => {
       return <DashboardStudent />;
     case 'teacher':
       return <TeacherDashboard />;
-    case 'admin':
-      return <AdminDash />;
+    // case 'parent':
+    //   return <ParentDashboard />;
+    // case 'admin':
+    //   return <AdminDashboard />;
     default:
       return <Navigate to="/not-found" />;
   }

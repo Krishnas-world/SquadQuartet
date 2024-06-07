@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RoleContext } from '../context/RoleContext';
 
 const Register = () => {
@@ -37,6 +37,7 @@ const Register = () => {
   };
 
   return (
+  <>
     <form onSubmit={handleSubmit}>
       <input name="username" onChange={handleChange} placeholder="Username" />
       <input name="password" type="password" onChange={handleChange} placeholder="Password" />
@@ -53,6 +54,8 @@ const Register = () => {
       <input name="gender" onChange={handleChange} placeholder="Gender" />
       <button type="submit">Register</button>
     </form>
+    <p>Have an account already? <Link to='/login'>Login Here</Link></p>
+  </>
   );
 };
 

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function Widget() {
+export default function Courses() {
   
   return (
       <div className="bg-purple-100 min-h-screen p-4">

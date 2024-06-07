@@ -1,14 +1,21 @@
+import { Link } from "react-router-dom"
+import Profile from "./Profile"
+import Courses from "./Courses"
+
+
+const addName = ()=>{
+  console.log('Added Name')
+}
 export default function DashboardStudent() {
   return (
       <div className="flex h-screen">
         <div className="bg-white w-1/5 p-6">
           <h1 className="text-2xl font-bold mb-8">LearnEase</h1>
           <nav className="space-y-4">
-            <a href="#" className="text-purple-700 font-semibold">Dashboard</a> 
-            <a href="#" className="text-zinc-500">Profile</a>
-            <a href="#" className="text-zinc-500">Courses</a>
-            <a href="#" className="text-zinc-500">Tasks</a>
-            <a href="#" className="text-zinc-500">Settings</a>
+            <Link to="/" className="text-purple-700 font-semibold">Home</Link> 
+            <Link to="/profile" className="text-zinc-500">Profile</Link>
+            <Link to="/courses" className="text-zinc-500">Courses</Link>
+            <Link to="/tasks" className="text-zinc-500">Tasks</Link>
           </nav>
         </div>
         
@@ -44,7 +51,7 @@ export default function DashboardStudent() {
       <div className="flex space-x-4">
         <div className="bg-purple-200 p-4 rounded-lg flex-1">
           <img src="https://placehold.co/300x200" alt="Course Thumbnail" className="rounded-lg mb-4"/>
-          <h3 className="text-lg font-semibold mb-2">Beginner's Guide to become a Professional Front End Developer</h3>
+          <h3 className="text-lg font-semibold mb-2">Beginner's Guide to become Link Professional Front End Developer</h3>
           <span className="bg-zinc-300 text-zinc-700 px-2 py-1 rounded-full text-sm">FrontEnd WebDev</span>
         </div>
         <div className="bg-purple-200 p-4 rounded-lg flex-1">
@@ -58,7 +65,7 @@ export default function DashboardStudent() {
         <div className="bg-white w-1/5 p-6">
           <div className="mb-8">
             <img src="https://placehold.co/100x100" alt="User Profile" className="rounded-full mb-4"/>
-            <h2 className="text-xl font-bold">Good Morning Gauthami</h2>
+            <h2 className="text-xl font-bold"></h2>
           </div>
           <div className="bg-purple-100 p-4 rounded-lg mb-8">
             <h3 className="text-lg font-semibold mb-4">Statistic</h3>
