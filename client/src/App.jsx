@@ -18,7 +18,6 @@ import PrivateRoute from './components/PrivateRoute';
 import About from './pages/About';
 // import DashboardStudent from './pages/DashboardStudent';
 import RoleProvider from './context/RoleContext';
-import Widget from './pages/Widget';
 
 function App() {
   return (
@@ -28,7 +27,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/about" element={<Widget/>} />
+          <Route path="/about" element={<About/>} />
           <Route element={<PrivateRoute />}>
             <Route path="/dashboard" element={<PrivateRoute />} />
             <Route path="/profile" element={<Profile />} />

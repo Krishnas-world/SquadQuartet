@@ -21,20 +21,9 @@ const UserSchema = new Schema({
         enum: ["student", "teacher", "parent", "admin"]
         // required: true,
     },
-    profile: {
-        firstName: { 
-            type: String 
-        },
-        lastName: { 
-            type: String 
-        },
-        age: { 
-            type: Number 
-        },
-        gender: { 
-            type: String 
-        },
-        // Additional profile fields
+    name: {
+        type: String,
+        required: true
     },
     profilePicture:{
         type: String,

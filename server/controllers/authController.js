@@ -31,9 +31,13 @@ const signin = async (req, res, next) => {
 
 const signup = async (req, res, next) => {
     try {
-        const { username, email, password, role } = req.body;
+        const { username, email, password, role, name } = req.body;
         if (!username || !email || !password || username === '' || email === '' || password === '') {
             throw new Error('All fields are required');
+        }
+        const userEmail = await User.findOne({ username });
+        if (userEmail) {
+            throw new Error('Email already in use!')
         }
         const hashPass = bcrypt.hashSync(password, 10);
 
@@ -41,7 +45,8 @@ const signup = async (req, res, next) => {
             username,
             email,
             password: hashPass,
-            role // Include role in the user object
+            role, // Include role in the user object
+            name
         });
 
         await newUser.save();
