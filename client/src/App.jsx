@@ -16,8 +16,9 @@ import Register from './pages/Register';
 import VideoSession from './pages/VideoSession';
 import PrivateRoute from './components/PrivateRoute';
 import About from './pages/About';
-// import DashboardStudent from './pages/DashboardStudent';
+import DashboardStudent from './pages/DashboardStudent';
 import RoleProvider from './context/RoleContext';
+import Chat from './pages/Chat';
 
 function App() {
   return (
@@ -27,7 +28,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/about" element={<About/>} />
+
+          <Route path="/d" element={<DashboardStudent/>} />
+          <Route path="/t" element={<TeacherDashboard/>} />
+            <Route path="/forum" element={<Forum/>} />
+            <Route path="/chat" element={<Chat/>} />
           <Route element={<PrivateRoute />}>
             <Route path="/dashboard" element={<PrivateRoute />} />
             <Route path="/profile" element={<Profile />} />
@@ -36,7 +41,6 @@ function App() {
             <Route path="/library" element={<Library />} />
             <Route path="/course/:id" element={<CourseDetail />} />
             <Route path="/course/:id/content" element={<CourseContent />} />
-            <Route path="/forum" element={<Forum />} />
           </Route>
           <Route path="/courses" element={<Courses />} />
           <Route path="*" element={<NotFound />} />

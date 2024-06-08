@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 
-function Forum() {
+function Chat() {
   const [loading, setLoading] = useState(true);
 
   const handleIframeLoad = () => {
@@ -23,7 +23,7 @@ function Forum() {
         </div>
       )}
       <iframe
-        src="http://localhost:3001" // Replace with the port of your other localhost application
+        src="http://localhost:3002" // Replace with the port of your other localhost application
         style={{ width: '100%', height: '100%', border: 'none' }}
         title="External Application"
         onLoad={handleIframeLoad}
@@ -32,4 +32,4 @@ function Forum() {
   );
 }
 
-export default Forum;
+export default Chat;

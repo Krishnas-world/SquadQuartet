@@ -20,7 +20,7 @@ const DashboardStudent = () => {
           <Link to="/" className=" block text-purple-700 font-semibold">Home</Link>
           <Link to="/profile" className="block text-zinc-500">Profile</Link>
           <Link to="/courses" className="block text-zinc-500">Courses</Link>
-          <Link to="/tasks" className="block text-zinc-500">Tasks</Link>
+          <Link to="/forum" className="block text-zinc-500">Quiz</Link>
         </nav>
       </div>
 
@@ -52,12 +52,12 @@ const DashboardStudent = () => {
         <h2 className="text-2xl font-bold mb-4">Continue Watching!</h2>
         <div className="flex space-x-4">
           <div className="bg-purple-200 p-4 rounded-lg flex-1">
-            <img src="https://placehold.co/300x200" alt="Course Thumbnail" className="rounded-lg mb-4" />
+            <img src="../../public/front.jpg" alt="Course Thumbnail" className="rounded-lg mb-4" />
             <h3 className="text-lg font-semibold mb-2">Beginner's Guide to become a Professional Front End Developer</h3>
             <span className="bg-zinc-300 text-zinc-700 px-2 py-1 rounded-full text-sm">FrontEnd WebDev</span>
           </div>
           <div className="bg-purple-200 p-4 rounded-lg flex-1">
-            <img src="https://placehold.co/300x200" alt="Course Thumbnail" className="rounded-lg mb-4" />
+            <img src="../../public/ui.jpg" alt="Course Thumbnail" className="rounded-lg mb-4" />
             <h3 className="text-lg font-semibold mb-2">Learn Optimizing User Experience with the Best UX Design Techniques</h3>
             <span className="bg-zinc-300 text-zinc-700 px-2 py-1 rounded-full text-sm">UI/UX Design</span>
           </div>
@@ -66,7 +66,7 @@ const DashboardStudent = () => {
 
       <div className="bg-white w-1/5 p-6">
         <div className="mb-8">
-          <img src="https://placehold.co/100x100" alt="User Profile" className="rounded-full mb-4" />
+          <img src="../../public/dp.jpg" alt="User Profile" className="rounded-full mb-4 h-20 w-20  " />
           <h2 className="text-xl font-bold">Good Evening, {userName}</h2>
         </div>
         <div className="bg-purple-100 p-4 rounded-lg mb-8">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { Link } from 'react-router-dom';
 function TeacherDashboard() {
   const [name, setUserName] = useState('');
 
@@ -15,11 +15,11 @@ function TeacherDashboard() {
       <div className="w-1/5 bg-white p-4">
         <h1 className="text-2xl font-bold mb-6">LearnEase</h1>
         <nav className="space-y-4">
-          <a href="#" className="block text-zinc-600 dark:text-white font-semibold">Dashboard</a>
-          <a href="#" className="block text-zinc-600 dark:text-zinc-400">Students</a>
-          <a href="#" className="block text-zinc-600 dark:text-zinc-400">Live className</a>
-          <a href="#" className="block text-zinc-600 dark:text-zinc-400">Chat room</a>
-          <a href="#" className="block text-zinc-600 dark:text-zinc-400">Settings</a>
+          <Link to="#" className="block text-zinc-600 dark:text-white font-semibold">Dashboard</Link>
+          <Link to="#" className="block text-zinc-600 dark:text-zinc-400">Students</Link>
+          <Link to="#" className="block text-zinc-600 dark:text-zinc-400">Live Class</Link>
+          <Link to="/chat" className="block text-zinc-600 dark:text-zinc-400">Chat room</Link>
+          <Link to="#" className="block text-zinc-600 dark:text-zinc-400">Settings</Link>
         </nav>
       </div>
 
@@ -65,7 +65,7 @@ function TeacherDashboard() {
 
           <div className="w-2/3 space-y-6">
 
-            <div className="bg-purple-200  p-6 rounded-lg">
+            <div className="bg-white  p-6 rounded-lg">
               <h3 className="text-xl font-bold">Student Progress</h3>
               <img src="https://placehold.co/300x150" alt="Progress Chart" className="mt-4" />
             </div>
