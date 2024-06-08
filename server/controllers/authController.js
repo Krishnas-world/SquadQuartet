@@ -126,5 +126,6 @@ const completeProfile = async (req, res, next) => {
     }
 };
 
+
 module.exports = { signin, signup, google, completeProfile };
 
