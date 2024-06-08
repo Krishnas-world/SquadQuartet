@@ -16,7 +16,7 @@ const Login = ({ setRole }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/server/auth/signin', formData);
+      const response = await axios.post('https://squadquartet.onrender.com/server/auth/signin', formData);
       const { data } = response;
       if (!data.token) {
         throw new Error('Invalid token');

@@ -18,7 +18,7 @@ function TeacherDashboard() {
   const fetchStudents = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/students');
+      const response = await axios.get('https://squadquartet.onrender.com/students');
       setStudents(response.data);
       setShowStudents(true);
     } catch (error) {

@@ -13,7 +13,7 @@ const Header = () => {
 
   const handleSignout = async () => {
     try {
-      const res = await fetch('http://localhost:3000/server/user/signout', {
+      const res = await fetch('https://squadquartet.onrender.com/server/user/signout', {
         method: 'POST',
         credentials: 'include',  // Ensure cookies are included
       });

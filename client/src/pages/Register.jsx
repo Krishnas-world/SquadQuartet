@@ -28,7 +28,7 @@
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-          const response = await axios.post('http://localhost:3000/server/auth/signup', formData);
+          const response = await axios.post('https://squadquartet.onrender.com/server/auth/signup', formData);
           const token = response.data.token;
           localStorage.setItem('accessToken', token);
 
