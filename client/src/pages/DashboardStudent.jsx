@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+// import Calender from "../components/Calender";
 
 const DashboardStudent = () => {
   const [userName, setUserName] = useState('');
@@ -13,17 +14,17 @@ const DashboardStudent = () => {
 
   return (
     <div className="flex h-screen">
-      <div className="bg-white w-1/5 p-6">
-        <h1 className="text-2xl font-bold mb-8">LearnEase</h1>
+       <div className="w-1/5 bg-white p-4">
+       <h1 className="text-2xl font-bold mb-6">LearnEase</h1>
         <nav className="space-y-4">
-          <Link to="/" className="text-purple-700 font-semibold">Home</Link>
-          <Link to="/profile" className="text-zinc-500">Profile</Link>
-          <Link to="/courses" className="text-zinc-500">Courses</Link>
-          <Link to="/tasks" className="text-zinc-500">Tasks</Link>
+          <Link to="/" className=" block text-purple-700 font-semibold">Home</Link>
+          <Link to="/profile" className="block text-zinc-500">Profile</Link>
+          <Link to="/courses" className="block text-zinc-500">Courses</Link>
+          <Link to="/tasks" className="block text-zinc-500">Tasks</Link>
         </nav>
       </div>
 
-      <div className="flex-1 bg-purple-50 p-8">
+      <div className="flex-1 h-max bg-purple-50 p-8">
         <div className="flex justify-between items-center mb-8">
           <input type="text" placeholder="search courses" className="w-1/2 p-2 rounded-lg border border-zinc-300" />
         </div>

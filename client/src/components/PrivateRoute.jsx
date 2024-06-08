@@ -1,12 +1,10 @@
-import { Navigate, useLocation } from "react-router-dom";
-import DashboardStudent from "../pages/DashboardStudent";
-import TeacherDashboard from "../pages/TeacherDashboard";
-// import ParentDashboard from "../pages/ParentDashboard";
-// import AdminDashboard from "../pages/AdminDashboard";
-import { useContext, useEffect } from "react";
-import { RoleContext } from "../context/RoleContext";
+import React, { useContext, useEffect } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import DashboardStudent from '../pages/DashboardStudent';
+import TeacherDashboard from '../pages/TeacherDashboard';
+import { RoleContext } from '../context/RoleContext';
 
-const PrivateRoute = ({ element: Component, ...rest }) => {
+const PrivateRoute = () => {
   const token = localStorage.getItem('accessToken');
   const location = useLocation();
   const { role, updateRole } = useContext(RoleContext);
@@ -25,7 +23,7 @@ const PrivateRoute = ({ element: Component, ...rest }) => {
   }, [token, updateRole]);
 
   if (!token) {
-    return <Navigate to="/register" replace state={{ from: location }} />;
+    return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
   switch (role) {
@@ -33,10 +31,7 @@ const PrivateRoute = ({ element: Component, ...rest }) => {
       return <DashboardStudent />;
     case 'teacher':
       return <TeacherDashboard />;
-    // case 'parent':
-    //   return <ParentDashboard />;
-    // case 'admin':
-    //   return <AdminDashboard />;
+    // Add cases for other roles if needed
     default:
       return <Navigate to="/not-found" />;
   }

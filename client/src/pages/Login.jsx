@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ setRole }) => {
   const [formData, setFormData] = useState({
     email: '',
-    password: '',
-    role: ''
+    password: ''
   });
   const [error, setError] = useState('');
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,12 +17,13 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3000/server/auth/signin', formData);
-      const token = response.data.token;
-      if (!token) {
+      const { data } = response;
+      if (!data.token) {
         throw new Error('Invalid token');
       }
-      localStorage.setItem('accessToken', token);
-      navigate('/dashboard'); // Redirect to dashboard on successful login
+      localStorage.setItem('accessToken', data.token);
+      setRole(data.role); // Trigger role update in context
+      window.location = '/dashboard'; // Redirect to dashboard on successful login
     } catch (error) {
       console.error('Error logging in:', error);
       setError('Invalid email or password'); // Set error message for invalid login

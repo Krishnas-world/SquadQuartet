@@ -24,10 +24,6 @@ const signin = async (req, res, next) => {
       next(error);
     }
   };
-  
-  
-
-
 
 const signup = async (req, res, next) => {
     try {
