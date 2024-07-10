@@ -40,7 +40,6 @@
               name: formData.name
           };
           localStorage.setItem('userDetails', JSON.stringify(userDetails));
-
           const decodedToken = JSON.parse(atob(token.split('.')[1]));
           updateRole(decodedToken.role);
           alert('Registration successful!');

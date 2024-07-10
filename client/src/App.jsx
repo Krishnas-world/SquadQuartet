@@ -33,7 +33,7 @@ function App() {
           <Route path="/t" element={<TeacherDashboard/>} />
             <Route path="/forum" element={<Forum/>} />
             <Route path="/chat" element={<Chat/>} />
-          <Route element={<PrivateRoute />}>
+
             <Route path="/dashboard" element={<PrivateRoute />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/video-session" element={<VideoSession />} />
@@ -41,7 +41,7 @@ function App() {
             <Route path="/library" element={<Library />} />
             <Route path="/course/:id" element={<CourseDetail />} />
             <Route path="/course/:id/content" element={<CourseContent />} />
-          </Route>
+
           <Route path="/courses" element={<Courses />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
